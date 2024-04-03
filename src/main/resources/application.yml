@@ -1,10 +1,14 @@
 spring:
   datasource:
-    driverClassName: org.h2.Driver
-    password: sa
+#    driverClassName: org.h2.Driver
     #    url: jdbc:h2:mem:dbtest
-    url: jdbc:h2:~/dbtest
-    username: sa
+    #    url: jdbc:h2:~/dbtest
+    #    username: sa
+    #    password: sa
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.56.101:3306/test?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: Shsh0105!
   h2:
     console:
       enabled: true
@@ -20,3 +24,34 @@ spring:
       platform: h2
       schema-locations: classpath:db/schema.sql
       data-locations: classpath:db/data.sql
+test:
+  bbb: bbb
+  aaa: false
+
+logging:
+  file:
+    path: log/
+  pattern:
+    console: "%red(%d{yyyy-MM-dd HH:mm:ss.SSS}) %green([%thread]) %blue([%-5level]) %cyan(%logger{36}:%line) %msg%n"
+  level:
+    root: info
+
+
+
+# memcached配置
+memcached:
+  #memcached服务器节点(格式为host:port) IP:端口号
+  servers: 192.168.56.101:11211
+  # 设置接口操作的默认超时时间，可以被接口覆盖
+  opTimeout: 3000
+  # nio连接池的数量
+  poolSize: 10
+  # 是否启用失败模式，默认为false
+  failureMode: false
+  # 是否使用memcached缓存
+  enabled: true
+
+
+
+
+
