@@ -24,6 +24,11 @@ spring:
       platform: h2
       schema-locations: classpath:db/schema.sql
       data-locations: classpath:db/data.sql
+  data:
+    redis:
+      port: 6380
+      host: 192.168.56.101
+      database: 0
 test:
   bbb: bbb
   aaa: false
